@@ -161,10 +161,3 @@ Docker containerization
 👨‍💻 Author
 
 Built as part of backend development learning using Spring Boot.
-
-🔥 Optional Upgrade (If You Want to Look More Professional)
-
-At the top of the README, you can add:
-
-Status: Active Development
-Version: 1.0
