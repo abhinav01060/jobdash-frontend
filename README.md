@@ -1,5 +1,4 @@
-📌 JobDash – Job Application Dashboard (Backend)
-🚀 Overview
+📌 JobDash – Job Application Dashboard (Backend) 🚀 Overview
 
 JobDash is a Spring Boot backend application that allows users to manage and track job applications.
 
@@ -35,16 +34,7 @@ Maven
 
 REST APIs
 
-🧱 Project Architecture
-com.jobdash.dash
- ├── controller
- ├── service
- ├── repository
- ├── model
- ├── dto
- ├── exception
- └── JobDashApplication
-Layer Responsibilities
+🧱 Project Architecture com.jobdash.dash ├── controller ├── service ├── repository ├── model ├── dto ├── exception └── JobDashApplication Layer Responsibilities
 
 Controller → Handles HTTP requests
 
@@ -58,17 +48,11 @@ Model (Entity) → Represents database table
 
 Exception → Global error handling
 
-📡 API Endpoints
-1️⃣ Create Application
+📡 API Endpoints 1️⃣ Create Application
 
 POST /applications
 
-{
-  "companyName": "Google",
-  "role": "Backend Engineer",
-  "source": "LinkedIn"
-}
-2️⃣ Get All Applications
+{ "companyName": "Google", "role": "Backend Engineer", "source": "LinkedIn" } 2️⃣ Get All Applications
 
 GET /applications
 
@@ -108,12 +92,7 @@ Global exception handling (@ControllerAdvice)
 
 RESTful API design
 
-🧪 Running Locally
-1️⃣ Clone the repository
-git clone https://github.com/your-username/jobdash-backend.git
-cd jobdash-backend
-2️⃣ Run the application
-./mvnw spring-boot:run
+🧪 Running Locally 1️⃣ Clone the repository git clone https://github.com/your-username/jobdash-backend.git cd jobdash-backend 2️⃣ Run the application ./mvnw spring-boot:run
 
 or from IDE run JobDashApplication.
 
@@ -125,8 +104,7 @@ http://localhost:8080
 
 H2 Console (if enabled):
 
-http://localhost:8080/h2-console
-📦 Database
+http://localhost:8080/h2-console 📦 Database
 
 Currently using:
 
