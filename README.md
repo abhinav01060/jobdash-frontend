@@ -1,8 +1,9 @@
-📌 JobDash – Job Application Dashboard (Backend) 🚀 Overview
+🎨 JobDash – Frontend (React Dashboard)
+🚀 Overview
 
-JobDash is a Spring Boot backend application that allows users to manage and track job applications.
+JobDash Frontend is a React-based dashboard application that allows users to manage and track job applications.
 
-It provides REST APIs for:
+It connects to a Spring Boot backend via REST APIs and provides a clean, responsive interface for:
 
 Creating job applications
 
@@ -12,130 +13,93 @@ Updating application status
 
 Deleting applications
 
-Validating input
-
-Handling errors properly
-
-This project demonstrates clean backend architecture using Spring Boot and JPA.
+This project demonstrates full-stack integration using React and Axios.
 
 🛠 Tech Stack
 
-Java 17+
+React (Functional Components)
 
-Spring Boot
+Axios (API communication)
 
-Spring Data JPA
+Tailwind CSS (Styling) (if used)
 
-H2 (development database)
+JavaScript (ES6+)
 
-PostgreSQL (optional for production)
+🔗 Backend Integration
 
-Maven
+This frontend connects to the JobDash backend API.
 
-REST APIs
+Backend Repository:
+👉 https://github.com/your-username/jobdash-backend
 
-🧱 Project Architecture com.jobdash.dash ├── controller ├── service ├── repository ├── model ├── dto ├── exception └── JobDashApplication Layer Responsibilities
+Make sure the backend is running at:
 
-Controller → Handles HTTP requests
+http://localhost:8080
+📂 Project Structure
+src/
+ ├── components/
+ ├── pages/
+ ├── services/
+ │    └── api.js
+ ├── App.js
+ └── index.js
+Folder Responsibilities
 
-Service → Contains business logic
+components/ → UI components
 
-Repository → Handles database operations
+pages/ → Main dashboard page
 
-DTO → Represents client input
+services/api.js → Axios API calls
 
-Model (Entity) → Represents database table
+App.js → Main application component
 
-Exception → Global error handling
+📡 API Usage
 
-📡 API Endpoints 1️⃣ Create Application
-
-POST /applications
-
-{ "companyName": "Google", "role": "Backend Engineer", "source": "LinkedIn" } 2️⃣ Get All Applications
+The frontend consumes the following backend endpoints:
 
 GET /applications
 
-3️⃣ Update Application Status
+POST /applications
 
-PUT /applications/{id}/status?status=INTERVIEW
-
-Allowed status values:
-
-APPLIED
-
-INTERVIEW
-
-OFFER
-
-REJECTED
-
-4️⃣ Delete Application
+PUT /applications/{id}/status
 
 DELETE /applications/{id}
 
-✅ Features Implemented
+API calls are managed using Axios inside services/api.js.
 
-Clean layered architecture
+🧪 Running Locally
+1️⃣ Clone the repository
+git clone https://github.com/your-username/jobdash-frontend.git
+cd jobdash-frontend
+2️⃣ Install dependencies
+npm install
+3️⃣ Start development server
+npm start
 
-DTO → Entity conversion
+App runs at:
 
-Enum-based status management
+http://localhost:3000
+⚙️ Environment Configuration (Recommended)
 
-JPA-based persistence
+Instead of hardcoding API URL, create a .env file:
 
-Automatic ID generation
+REACT_APP_API_URL=http://localhost:8080
 
-Validation using @NotBlank
+Then update Axios config:
 
-Global exception handling (@ControllerAdvice)
+baseURL: process.env.REACT_APP_API_URL
+✨ Features Implemented
 
-RESTful API design
+Responsive dashboard layout
 
-🧪 Running Locally 1️⃣ Clone the repository git clone https://github.com/your-username/jobdash-backend.git cd jobdash-backend 2️⃣ Run the application ./mvnw spring-boot:run
+Add new job application form
 
-or from IDE run JobDashApplication.
+Applications table view
 
-3️⃣ Access API
+Status update dropdown
 
-Backend runs on:
+Delete confirmation
 
-http://localhost:8080
+Loading and error handling
 
-H2 Console (if enabled):
-
-http://localhost:8080/h2-console 📦 Database
-
-Currently using:
-
-H2 (in-memory database for development)
-
-Can be switched to:
-
-PostgreSQL for production deployment
-
-🌍 Deployment
-
-Recommended deployment platforms:
-
-Backend → Render
-
-Frontend → Vercel / Netlify
-
-🎯 Future Improvements
-
-User authentication (Spring Security + JWT)
-
-Pagination & sorting
-
-Filtering by status
-
-Dashboard statistics endpoint
-
-PostgreSQL integration for production
-
-Docker containerization
-
-👨‍💻 Author
-
-Built as part of backend development learning using Spring Boot.
+Full backend integration
